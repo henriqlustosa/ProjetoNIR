@@ -62,18 +62,18 @@ public partial class administrativo_ListaInternados : System.Web.UI.Page
         //colorindo uma linha com base no conteúdo de uma célula
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            int tempo = Convert.ToInt32(e.Row.Cells[7].Text);
+            int tempo = Convert.ToInt32(e.Row.Cells[8].Text);
             if (tempo <= 5)
             {
-                e.Row.Cells[7].BackColor = System.Drawing.Color.Green;
-                e.Row.Cells[7].ForeColor = System.Drawing.Color.White;
+                e.Row.Cells[8].BackColor = System.Drawing.Color.Green;
+                e.Row.Cells[8].ForeColor = System.Drawing.Color.White;
             }
             if(tempo.Equals(6)){
-                e.Row.Cells[7].BackColor = System.Drawing.Color.Yellow;
+                e.Row.Cells[8].BackColor = System.Drawing.Color.Yellow;
             }
             if(tempo >= 7){
-                e.Row.Cells[7].BackColor = System.Drawing.Color.Red;
-                e.Row.Cells[7].ForeColor = System.Drawing.Color.White;
+                e.Row.Cells[8].BackColor = System.Drawing.Color.Red;
+                e.Row.Cells[8].ForeColor = System.Drawing.Color.White;
             }
         }
     }

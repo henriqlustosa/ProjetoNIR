@@ -20,4 +20,5 @@ public class Paciente : Internacao
     public string nascimento { get; set; }
     public string sexo { get; set; }
     public string vinculo { get; set; }
+    public int idade { get; set; }
 }

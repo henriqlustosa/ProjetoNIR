@@ -39,6 +39,8 @@
                     ItemStyle-CssClass="hidden-xs" HeaderStyle-CssClass="hidden-xs" />
                 <asp:BoundField DataField="nome" HeaderText="Paciente" SortExpression="nome" ItemStyle-CssClass="hidden-md"
                     HeaderStyle-CssClass="hidden-md" />
+                     <asp:BoundField DataField="idade" HeaderText="Idade" SortExpression="idade" ItemStyle-CssClass="hidden-md"
+                    HeaderStyle-CssClass="hidden-md" />
                 <asp:BoundField DataField="data_internacao_data" HeaderText="Dt Int" SortExpression="data_internacao_data"
                     ItemStyle-CssClass="hidden-xs" HeaderStyle-CssClass="hidden-xs" />
                 <asp:BoundField DataField="unidade_funcional" HeaderText="Unidade Funcional" SortExpression="unidade_funcional"
@@ -79,6 +81,7 @@
             $.noConflict();
             $('#<%= GridView1.ClientID %>').DataTable({
                 "paging": false,
+                "order": [[ 1, "asc" ]],
                 "ordering": true,
                 "info": false
             });

@@ -74,8 +74,9 @@ public class CensoDAO
                               ",[aguarda]" +
                               ",[cod_internacao]" +
                               ",[data_carga]" +
+                              ",[nascimento]" +
                               " FROM [v_relatorio_detalhado] " +
-                              " WHERE DAY(data_carga) = "+ dia +" and MONTH(data_carga)= "+ mes +" and YEAR(data_carga)= " +ano;
+                              " WHERE DAY(data_carga) = "+ dia +" and MONTH(data_carga)= "+ mes +" and YEAR(data_carga)= " +ano ;
             cmm.CommandText = sqlConsulta;
             try
             {
@@ -99,14 +100,18 @@ public class CensoDAO
                     p.aguarda = dr1.IsDBNull(11) ? "" : dr1.GetString(11);
                     p.cod_internacao = dr1.GetInt32(12);
                     p.data_carga = dr1.GetDateTime(13);
+                    p.nascimento = dr1.GetString(14);
+                    p.idade = FormatDate.CalculaIdade(p.nascimento);
                     listaInternados.Add(p);
+
+                    
                 }
             }
             catch (Exception ex)
             {
                 string error = ex.Message;
             }
-
+            //listaInternados.OrderBy(internado => internado.quarto);
 
             return listaInternados;
         }
