@@ -95,7 +95,9 @@ public class CensoDAO
                     p.tempo = dr1.GetString(6);
                     p.cid = dr1.GetString(7);
                     p.descricao_cid = dr1.GetString(8);
-                    p.diagnostico = dr1.IsDBNull(9) ? "" : dr1.GetString(9);
+                    //colocar o cid no diagnóstico. Em 09/04/2021
+                    p.diagnostico = p.cid.ToString() + " - " + p.descricao_cid;
+                    p.diagnostico += dr1.IsDBNull(9) ? "" : ";" + dr1.GetString(9);
                     p.detalhamento = dr1.IsDBNull(10) ? "" : dr1.GetString(10);
                     p.aguarda = dr1.IsDBNull(11) ? "" : dr1.GetString(11);
                     p.cod_internacao = dr1.GetInt32(12);

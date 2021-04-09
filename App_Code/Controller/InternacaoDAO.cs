@@ -108,8 +108,6 @@ public class InternacaoDAO
             }
         }
     }
-    
-   
 
     public static void AtualizarInternacao(int prontuario_pac, string quarto, string dt_internacao, string especialidade, string medico, string tempo, string cid, string descricao_cid, string unidade_funcional, string usuario_carga)
     {
