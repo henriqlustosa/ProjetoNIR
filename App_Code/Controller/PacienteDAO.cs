@@ -139,4 +139,44 @@ public class PacienteDAO
         }
         return p;
     }
+
+    internal static void AtualizarPaciente(int prontuario, string nome, string nascimento, string sexo, string vinculo)
+    {
+        using (SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["nirConnectionString"].ToString()))
+        {
+            SqlCommand cmm = new SqlCommand();
+            cmm.Connection = cnn;
+            cnn.Open();
+            SqlTransaction mt = cnn.BeginTransaction();
+            cmm.Transaction = mt;
+            try
+            {
+
+
+                cmm.CommandText = "UPDATE [dbo].[Paciente] " +
+                                   " SET" +
+                                   " [nome] = @nome " +
+                                   ",[nascimento] = @nascimento"  +
+                                   ",[sexo] = @sexo " +
+                                   ",[vinculo] = @vinculo " +
+                                   " WHERE prontuario = @prontuario";
+
+                cmm.Parameters.Add("@prontuario", SqlDbType.Int).Value = prontuario;
+                cmm.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+                cmm.Parameters.Add("@nascimento", SqlDbType.VarChar).Value = nascimento;
+                cmm.Parameters.Add("@sexo", SqlDbType.VarChar).Value = sexo;
+                cmm.Parameters.Add("@vinculo", SqlDbType.VarChar).Value = vinculo;
+                cmm.ExecuteNonQuery();
+                mt.Commit();
+                mt.Dispose();
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                mt.Rollback();
+            }
+        }
+    }
 }

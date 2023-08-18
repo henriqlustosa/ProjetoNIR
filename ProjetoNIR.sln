@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ProjetoNIR", ".", "{B5A90364-A9CB-429D-8DB7-47F461343561}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/ProjetoNIR"
+		Debug.AspNetCompiler.PhysicalPath = "G:\OneDrive - Default Directory\OneDrive - rede.sp\ProjetoNIR\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ProjetoNIR\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ProjetoNIR"
+		Release.AspNetCompiler.PhysicalPath = "G:\OneDrive - Default Directory\OneDrive - rede.sp\ProjetoNIR\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ProjetoNIR\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "28861"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5A90364-A9CB-429D-8DB7-47F461343561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A90364-A9CB-429D-8DB7-47F461343561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

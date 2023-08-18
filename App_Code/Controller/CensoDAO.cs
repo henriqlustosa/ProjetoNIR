@@ -28,7 +28,8 @@ public class CensoDAO
             InternacaoDAO.InserirInternacao(p.prontuario, p.quarto, p.data_internacao_data, p.especialidade, p.medico, p.tempo, p.cid, p.descricaoCid, p.unidade_funcional);
         }
         else
-        {   
+        {
+            PacienteDAO.AtualizarPaciente(p.prontuario, p.nome, p.nascimento, p.sexo, p.vinculo);
             int existInternacao = InternacaoDAO.VerificaInternacao(p.prontuario, p.data_internacao_data);
 
             if (existInternacao.Equals(0))

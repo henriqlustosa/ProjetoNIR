@@ -2,11 +2,14 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Default.aspx" title="Home"  description="Página principal do web site">
     
-    <siteMapNode url="~/administrativo/Principal.aspx" roles="Gestores" title="Painel" >
-    </siteMapNode>
-    
-    
-    <siteMapNode url="" title="Cadastro" roles="Colaboradores, Administradores" description="Administração do Site">
+  
+
+  <siteMapNode url="" title="Painel" roles="Gestores" description="Painel">
+    <siteMapNode url="~/administrativo/Principal.aspx" roles="Gestores" title="Painel"/>
+   
+  </siteMapNode>
+
+  <siteMapNode url="" title="Cadastro" roles="Colaboradores, Administradores" description="Administração do Site">
       <siteMapNode url="~/Restrito/UsuariosOnLine.aspx" title="Usuários Online" description="Usuários Online" />
       <siteMapNode url="~/Restrito/CadastroUsuario.aspx" title="Cadastro Usuário" description="Cadastro de novos usuários do sistema" />
       <siteMapNode url="~/Restrito/Permissao.aspx" title="Permissões" description="Cadastro de permissões para usuários do sistema" />
