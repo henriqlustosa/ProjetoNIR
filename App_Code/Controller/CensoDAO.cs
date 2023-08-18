@@ -20,7 +20,7 @@ public class CensoDAO
     public static void InserirCenso(Censo p)
     {
         int existPac = PacienteDAO.existPaciente(p.prontuario);
-        p.usuario_carga = "Luciano Teste";
+        p.usuario_carga = System.Web.HttpContext.Current.User.Identity.Name.ToLower();
 
         if (existPac.Equals(0))
         {
