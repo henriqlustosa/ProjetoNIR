@@ -20,27 +20,32 @@ public class CensoDAO
     public static void InserirCenso(Censo p)
     {
         int existPac = PacienteDAO.existPaciente(p.prontuario);
+        int existInternacao = InternacaoDAO.VerificaInternacao(p.prontuario, p.data_internacao_data);
         p.usuario_carga = System.Web.HttpContext.Current.User.Identity.Name.ToLower();
 
         if (existPac.Equals(0))
         {
             PacienteDAO.InserirPaciente(p.prontuario, p.nome, p.nascimento, p.sexo, p.vinculo);
-            InternacaoDAO.InserirInternacao(p.prontuario, p.quarto, p.data_internacao_data, p.especialidade, p.medico, p.tempo, p.cid, p.descricaoCid, p.unidade_funcional);
+           
         }
         else
         {
             PacienteDAO.AtualizarPaciente(p.prontuario, p.nome, p.nascimento, p.sexo, p.vinculo);
-            int existInternacao = InternacaoDAO.VerificaInternacao(p.prontuario, p.data_internacao_data);
-
-            if (existInternacao.Equals(0))
-            {
-                InternacaoDAO.InserirInternacao(p.prontuario, p.quarto, p.data_internacao_data, p.especialidade, p.medico, p.tempo, p.cid, p.descricaoCid, p.unidade_funcional);
-            }
-            else
-            {
-                InternacaoDAO.AtualizarInternacao(p.prontuario, p.quarto, p.data_internacao_data, p.especialidade, p.medico, p.tempo, p.cid, p.descricaoCid, p.unidade_funcional, p.usuario_carga);
-            }
         }
+       
+           
+
+       if (existInternacao.Equals(0))
+       {
+         
+            InternacaoDAO.InserirInternacao(p.prontuario, p.quarto, p.data_internacao_data, p.especialidade, p.medico, p.tempo, p.cid, p.descricaoCid, p.unidade_funcional);
+       }
+       else
+       {
+            
+            InternacaoDAO.AtualizarInternacao(p.prontuario, p.quarto, p.data_internacao_data, p.especialidade, p.medico, p.tempo, p.cid, p.descricaoCid, p.unidade_funcional, p.usuario_carga);
+       }
+        
     }
 
     
